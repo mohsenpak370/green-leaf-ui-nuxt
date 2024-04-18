@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale, locales } = useI18n();
+const { locale, locales, setLocale } = useI18n();
 
 const switchLocalePath = useSwitchLocalePath();
 
@@ -13,6 +13,12 @@ const colorMode = useColorMode();
 const toggleDarkMode = () => {
   colorMode.preference = colorMode.value === 'light' ? 'dark' : 'light';
 };
+
+const switchLocale = () => {
+  if (locale.value === 'en') setLocale('fr');
+  if (locale.value === 'fr') setLocale('de');
+  if (locale.value === 'de') setLocale('en');
+};
 </script>
 
 <template>
@@ -21,7 +27,8 @@ const toggleDarkMode = () => {
       <IconGreenLeaf class="text-3xl md:text-5xl flex-shrink-0" filled />
       <h1 class="text-lg md:text-3xl font-semibold text-gray-700 dark:text-gray-50">Green Leaf UI - Nuxt</h1>
     </div>
-    <div class="flex items-center gap-1 md:gap-4">
+
+    <div class="hidden md:flex items-center gap-1 md:gap-4">
       <div
         class="relative text-gray-600 dark:text-gray-200 cursor-pointer select-none"
         @click="showLocales = !showLocales"
@@ -51,6 +58,35 @@ const toggleDarkMode = () => {
           </transition-group>
         </ColorScheme>
       </button>
+    </div>
+    <div class="relative block md:hidden">
+      <button @click="showLocales = !showLocales">
+        <IconAdjustments class="text-2xl text-gray-700 dark:text-gray-200" />
+      </button>
+      <div
+        v-if="showLocales"
+        class="p-4 min-w-48 absolute top-10 right-0 border border-light-accent bg-light-default dark:border-gray-700 dark:bg-dark-default rounded-2 flex flex-col gap-1"
+      >
+        <div class="flex items-center justify-between gap-12 text-gray-700 dark:text-gray-200">
+          <p class="text-lg">{{ capitalizeFirstLetter($t('theme')) }}:</p>
+          <button class="relative w-6 h-6" @click="toggleDarkMode">
+            <ColorScheme placeholder="" tag="div">
+              <transition-group name="toggle-theme">
+                <IconMoon
+                  key="moon"
+                  v-if="colorMode.value === 'light'"
+                  class="absolute inset-0 text-2xl text-gray-600"
+                />
+                <IconSun key="sun" v-if="colorMode.value === 'dark'" class="absolute inset-0 text-2xl text-gray-200" />
+              </transition-group>
+            </ColorScheme>
+          </button>
+        </div>
+        <div class="mt-4 flex items-center justify-between gap-12 text-gray-700 dark:text-gray-200">
+          <p class="text-lg">{{ $t('language') }}:</p>
+          <button @click="switchLocale">{{ locale.toUpperCase() }}</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
