@@ -1,41 +1,47 @@
 <script setup lang="ts">
-const { locale, locales, setLocale } = useI18n();
+const { locale, locales } = useI18n();
 
 const switchLocalePath = useSwitchLocalePath();
 
 const availableLocales = computed(() => {
-  console.log({ locales });
   return locales.value.filter((i) => i.code !== locale.value);
 });
 
+const showLocales = ref(false);
+
 const colorMode = useColorMode();
 const toggleDarkMode = () => {
-  console.log('toggle');
   colorMode.preference = colorMode.value === 'light' ? 'dark' : 'light';
 };
 </script>
 
 <template>
-  <div class="px-8 flex items-center justify-between bg-light-default dark:bg-dark-default sticky top-0">
-    <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-50">Nuxt boilerplate</h1>
-    <div class="flex items-center gap-4">
-      <div class="">
-        <NuxtLink
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          :to="switchLocalePath(locale.code)"
-          class="text-blue-700"
+  <div class="container py-4 flex items-center justify-between bg-light-default dark:bg-dark-default sticky top-0">
+    <div class="flex items-center gap-2">
+      <IconGreenLeaf class="text-3xl md:text-5xl flex-shrink-0" filled />
+      <h1 class="text-lg md:text-3xl font-semibold text-gray-700 dark:text-gray-50">Green Leaf UI - Nuxt</h1>
+    </div>
+    <div class="flex items-center gap-1 md:gap-4">
+      <div
+        class="relative text-gray-600 dark:text-gray-200 cursor-pointer select-none"
+        @click="showLocales = !showLocales"
+      >
+        <p class="px-2 mx:px-4 py-1 text-sm md:text-lg font-semibold">
+          {{ locales.find((i) => i.code === locale)?.name }}
+        </p>
+        <div
+          v-if="showLocales"
+          class="p-2 absolute top-10 right-4 border border-light-accent bg-light-default dark:border-gray-700 dark:bg-dark-default rounded-2 flex flex-col gap-1"
         >
-          {{ locale.name }}
-        </NuxtLink>
-      </div>
-      <div class="p-8 flex gap-4">
-        <AtomsButton :class="locale === 'en' ? 'bg-blue-300' : 'bg-white'" @click="setLocale('en')">
-          English
-        </AtomsButton>
-        <AtomsButton :class="locale === 'fr' ? 'bg-blue-300' : 'bg-white'" @click="setLocale('fr')">
-          French
-        </AtomsButton>
+          <NuxtLink
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+            class="px-4 py-1.5 rounded-1 hover:bg-light-accent dark:hover:bg-dark-accent"
+          >
+            {{ locale.name }}
+          </NuxtLink>
+        </div>
       </div>
       <button class="relative w-8 h-8" @click="toggleDarkMode">
         <ColorScheme placeholder="" tag="div">

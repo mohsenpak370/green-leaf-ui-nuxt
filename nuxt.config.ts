@@ -14,6 +14,10 @@ export default defineNuxtConfig({
         code: 'fr',
         name: 'Français',
       },
+      {
+        code: 'de',
+        name: 'Deutsch',
+      },
     ],
     strategy: 'prefix_except_default',
     defaultLocale: 'en',

@@ -12,10 +12,18 @@ const onClick = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-light-default dark:bg-dark-default">
-    <p class="text-xl text-center py-12 text-gray-900 dark:text-gray-100">
-      {{ $t('welcome') }}
-    </p>
+  <div class="container">
+    <div class="grid grid-cols-2 gap-8">
+      <div class="">
+        <p class="text-xl text-gray-900 dark:text-gray-100 text-justify">
+          {{ $t('welcomeText') }}
+        </p>
+        <p class="mt-4 text-xl text-gray-900 dark:text-gray-100 text-justify">
+          {{ $t('introduction') }}
+        </p>
+      </div>
+      <div class="w-44 h-44 bg-dark-accent rounded-2"></div>
+    </div>
     <div class="flex items-center justify-center gap-2">
       <ButtonPrimary class="w-24" filled :loading="loading" @click="onClick"> Test </ButtonPrimary>
       <ButtonPrimary class="w-24" :loading="loading" @click="onClick"> Test </ButtonPrimary>
