@@ -1,14 +1,12 @@
 # Nuxt 3 Boilerplate
 
-This is a Nuxt boilerplate with Tailwind CSS, i18n, husky and lint-staged.
+Green Leaf UI library is built with Nuxt 3 and TailwindCSS.
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more about Nuxt.
 
 Other related links:
 
 https://nuxt.com/modules/tailwindcss
-
-https://nuxt.com/modules/i18n
 
 ## Setup
 
