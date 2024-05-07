@@ -1,8 +1,8 @@
 export default {
   welcomeText:
-    'Willkommen bei Green Leaf, einer kostenlosen UI-Bibliothek, die entwickelt wurde, um Ihre Webentwicklungserfahrung zu verbessern.',
+    'Willkommen, liebe Entwickler; Green Leaf UI ist eine Sammlung von kostenlosen Vue-UI-Komponenten, die so konzipiert sind, dass sie super einfach zu verwenden und hochgradig anpassbar sind.',
   introduction:
-    'it Nuxt 3 und TailwindCSS erstellt, bietet Green Leaf einen umfassenden Satz von Komponenten und Hilfsmitteln, um Ihnen bei der Erstellung von schönen, reaktionsschnellen und zugänglichen Webanwendungen zu helfen.',
+    'Mit TailwindCSS bietet Green Leaf ein umfassendes Set an Komponenten, die Ihnen helfen, mit Leichtigkeit schöne Webanwendungen zu erstellen und Ihr Webentwicklungserlebnis zu verbessern. Ich hoffe, Sie genießen die Verwendung :)',
   theme: 'thema',
   language: 'Sprache',
 };

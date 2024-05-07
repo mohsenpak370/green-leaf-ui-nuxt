@@ -7,8 +7,6 @@ const availableLocales = computed(() => {
   return locales.value.filter((i) => i.code !== locale.value);
 });
 
-const showLocales = ref(false);
-
 const colorMode = useColorMode();
 const toggleDarkMode = () => {
   colorMode.preference = colorMode.value === 'light' ? 'dark' : 'light';
@@ -19,13 +17,28 @@ const switchLocale = () => {
   if (locale.value === 'fr') setLocale('de');
   if (locale.value === 'de') setLocale('en');
 };
+
+const showLocales = ref(false);
+const langDropDown = ref(null);
+onClickOutside(langDropDown, (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  showLocales.value = false;
+});
+
+const showConfig = ref(false);
+const config = ref(null);
+onClickOutside(config, (event) => (showConfig.value = false));
 </script>
 
 <template>
-  <div class="container py-4 flex items-center justify-between bg-light-default dark:bg-dark-default sticky top-0">
+  <div
+    class="container py-4 md:py-6 flex items-center justify-between bg-light-default dark:bg-dark-default sticky top-0"
+  >
     <div class="flex items-center gap-2">
-      <IconGreenLeaf class="text-3xl md:text-5xl flex-shrink-0" filled />
-      <h1 class="text-lg md:text-3xl font-semibold text-gray-700 dark:text-gray-50">Green Leaf UI - Nuxt</h1>
+      <h1 class="relative -top-0.5 text-2xl md:text-4xl font-semibold text-gray-700 dark:text-gray-50">
+        Green Leaf UI
+      </h1>
     </div>
 
     <div class="hidden md:flex items-center gap-1 md:gap-4">
@@ -33,22 +46,27 @@ const switchLocale = () => {
         class="relative text-gray-600 dark:text-gray-200 cursor-pointer select-none"
         @click="showLocales = !showLocales"
       >
-        <p class="px-2 mx:px-4 py-1 text-sm md:text-lg font-semibold">
+        <p class="px-2 mx:px-4 py-1 text-sm md:text-lg font-medium flex items-end gap-1">
           {{ locales.find((i) => i.code === locale)?.name }}
+          <IconChevronDown class="text-xl" filled />
         </p>
-        <div
-          v-if="showLocales"
-          class="p-2 absolute top-10 right-4 border border-light-accent bg-light-default dark:border-gray-700 dark:bg-dark-default rounded-2 flex flex-col gap-1"
-        >
-          <NuxtLink
-            v-for="locale in availableLocales"
-            :key="locale.code"
-            :to="switchLocalePath(locale.code)"
-            class="px-4 py-1.5 rounded-1 hover:bg-light-accent dark:hover:bg-dark-accent"
+        <transition name="toggle-theme">
+          <div
+            v-if="showLocales"
+            ref="langDropDown"
+            class="p-2 absolute top-12 right-0 border border-light-accent bg-light-default dark:border-gray-700 dark:bg-dark-default rounded-2 flex flex-col gap-1"
           >
-            {{ locale.name }}
-          </NuxtLink>
-        </div>
+            <NuxtLink
+              v-for="locale in availableLocales"
+              :key="locale.code"
+              @click.stop.prevent
+              :to="switchLocalePath(locale.code)"
+              class="px-8 py-1.5 rounded-1 text-lg hover:bg-light-accent dark:hover:bg-dark-accent"
+            >
+              {{ locale.name }}
+            </NuxtLink>
+          </div>
+        </transition>
       </div>
       <button class="relative w-8 h-8" @click="toggleDarkMode">
         <ColorScheme placeholder="" tag="div">
@@ -58,35 +76,43 @@ const switchLocale = () => {
           </transition-group>
         </ColorScheme>
       </button>
-    </div>
-    <div class="relative block md:hidden">
-      <button @click="showLocales = !showLocales">
-        <IconAdjustments class="text-2xl text-gray-700 dark:text-gray-200" />
-      </button>
-      <div
-        v-if="showLocales"
-        class="p-4 min-w-48 absolute top-10 right-0 border border-light-accent bg-light-default dark:border-gray-700 dark:bg-dark-default rounded-2 flex flex-col gap-1"
+      <NuxtLink
+        external
+        href="https://github.com/mohsenpak370/green-leaf-ui-nuxt"
+        target="_blank"
+        class="h-9 px-1 flex items-end rounded-1 hover:bg-gray-200 hover:dark:bg-dark-accent"
       >
-        <div class="flex items-center justify-between gap-12 text-gray-700 dark:text-gray-200">
-          <p class="text-lg">{{ capitalizeFirstLetter($t('theme')) }}:</p>
-          <button class="relative w-6 h-6" @click="toggleDarkMode">
-            <ColorScheme placeholder="" tag="div">
-              <transition-group name="toggle-theme">
+        <IconGithub class="text-3xl text-gray-600 dark:text-gray-200" />
+      </NuxtLink>
+    </div>
+    <div ref="config" class="relative block md:hidden">
+      <button @click="showConfig = !showConfig">
+        <IconCog class="text-3xl text-gray-700 dark:text-gray-200" filled />
+      </button>
+      <transition name="toggle-theme">
+        <div
+          v-if="showConfig"
+          class="p-4 min-w-48 absolute top-12 right-0 border border-light-accent bg-light-default dark:border-gray-700 dark:bg-dark-default rounded-2 flex flex-col gap-1"
+        >
+          <div class="flex items-center justify-between gap-12 text-gray-700 dark:text-gray-200">
+            <p class="text-lg">{{ capitalizeFirstLetter($t('theme')) }}:</p>
+            <button class="relative w-6 h-6" @click.stop.prevent="toggleDarkMode">
+              <ColorScheme placeholder="" tag="div">
                 <IconMoon
                   key="moon"
                   v-if="colorMode.value === 'light'"
                   class="absolute inset-0 text-2xl text-gray-600"
                 />
                 <IconSun key="sun" v-if="colorMode.value === 'dark'" class="absolute inset-0 text-2xl text-gray-200" />
-              </transition-group>
-            </ColorScheme>
-          </button>
+              </ColorScheme>
+            </button>
+          </div>
+          <div class="mt-4 flex items-center justify-between gap-12 text-gray-700 dark:text-gray-200">
+            <p class="text-lg">{{ $t('language') }}:</p>
+            <button @click.stop.prevent="switchLocale">{{ locale.toUpperCase() }}</button>
+          </div>
         </div>
-        <div class="mt-4 flex items-center justify-between gap-12 text-gray-700 dark:text-gray-200">
-          <p class="text-lg">{{ $t('language') }}:</p>
-          <button @click="switchLocale">{{ locale.toUpperCase() }}</button>
-        </div>
-      </div>
+      </transition>
     </div>
   </div>
 </template>

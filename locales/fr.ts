@@ -1,8 +1,8 @@
 export default {
   welcomeText:
-    "Bienvenue dans Green Leaf, une bibliothèque d'interface utilisateur gratuite conçue pour améliorer votre expérience de développement web. Construite avec Nuxt 3 et TailwindCSS, Green Leaf propose un ensemble complet de composants et d'utilitaires pour vous aider à créer des applications web belles, réactives et accessibles.",
+    'Bienvenue cher développeur ; Green Leaf UI est une collection de composants Vue UI gratuits, conçus pour être super faciles à utiliser et hautement personnalisables.',
   introduction:
-    "Construite avec Nuxt 3 et TailwindCSS, Green Leaf propose un ensemble complet de composants et d'utilitaires pour vous aider à créer des applications web belles, réactives et accessibles.",
+    "Construit avec TailwindCSS, Green Leaf propose un ensemble complet de composants pour vous aider à créer facilement de belles applications Web et à améliorer votre expérience de développement Web. J'espère que vous apprécierez l'utiliser :)",
   theme: 'thème',
   language: 'Langue',
 };
