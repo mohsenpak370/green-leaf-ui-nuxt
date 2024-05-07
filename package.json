@@ -15,11 +15,14 @@
     "fixformat": "prettier --write ."
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
     "@nuxtjs/color-mode": "^3.4.0",
     "@nuxtjs/i18n": "^8.3.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@vercel/analytics": "^1.2.2",
+    "@vueuse/nuxt": "^10.9.0",
     "ajv": "^8.12.0",
+    "install": "^0.13.0",
     "lint-staged": "^15.2.2",
     "nuxt": "^3.11.2",
     "nuxt-svgo": "^4.0.0",

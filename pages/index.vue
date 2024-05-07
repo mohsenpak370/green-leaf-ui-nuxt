@@ -2,54 +2,28 @@
 const loading = ref(false);
 const radio = ref('c');
 const checkbox = ref(['c']);
-const onClick = () => {
-  console.log('clicked');
-  loading.value = true;
-  setTimeout(() => {
-    loading.value = false;
-  }, 3000);
-};
 </script>
 
 <template>
   <div class="container">
-    <div class="grid grid-cols-2 gap-8">
-      <div class="">
-        <p class="text-xl text-gray-900 dark:text-gray-100 text-justify">
+    <div
+      class="mt-16 p-8 md:p-16 bg-light-accent dark:bg-dark-accent rounded-2 flex flex-col-reverse md:grid md:grid-cols-2 gap-4 md:gap-8"
+    >
+      <div>
+        <p class="text-xl text-gray-900 dark:text-gray-100 text-center">
           {{ $t('welcomeText') }}
         </p>
-        <p class="mt-4 text-xl text-gray-900 dark:text-gray-100 text-justify">
+        <p class="mt-8 text-xl text-gray-900 dark:text-gray-100 text-center">
           {{ $t('introduction') }}
         </p>
       </div>
-      <div class="w-44 h-44 bg-dark-accent rounded-2"></div>
+      <div class="h-[16rem] w-full">
+        <IconGreenLeaf class="mx-auto text-[16rem]" filled />
+      </div>
     </div>
-    <div class="flex items-center justify-center gap-2">
-      <ButtonPrimary class="w-24" filled :loading="loading" @click="onClick"> Test </ButtonPrimary>
-      <ButtonPrimary class="w-24" :loading="loading" @click="onClick"> Test </ButtonPrimary>
-    </div>
-    <div class="mt-12 flex items-center justify-center gap-8">
-      <AtomsRadio
-        v-model="radio"
-        value="a"
-        size="sm"
-        label="Radio Label 1"
-        label-classes="text-sm text-gray-900 dark:text-gray-100"
-      />
-      <AtomsRadio v-model="radio" value="c" disabled>
-        <div>
-          <p class="text-xl text-gray-900 dark:text-gray-100">testing Title</p>
-          <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
-        </div>
-      </AtomsRadio>
-      <AtomsRadio
-        v-model="radio"
-        value="b"
-        size="lg"
-        label="Radio Label 2"
-        label-classes="text-sm text-gray-900 dark:text-gray-100"
-      />
-    </div>
+    <PagesHomeDisplayButtons />
+    <PagesHomeDisplayRadio />
+    <PagesHomeDisplayCheckbox />
     <div class="mt-12 flex items-center justify-center gap-8">
       <AtomsCheckbox
         v-model="checkbox"
