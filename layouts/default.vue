@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-dvh bg-light-default dark:bg-dark-default">
+  <div class="bg-light-default dark:bg-dark-default pb-4">
     <OrganismsHeader />
     <slot />
   </div>

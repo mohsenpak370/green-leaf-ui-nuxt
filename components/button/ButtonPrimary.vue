@@ -20,7 +20,7 @@ const onClick = () => {
     :class="{
       'bg-primary hover:bg-primary-accent !text-white': filled && !disabled,
       'dark:bg-white/80': !filled && !disabled,
-      '!bg-gray-200 !text-gray-500 !border-gray-200': disabled,
+      '!bg-gray-300 !text-gray-500 !border-gray-200': disabled,
     }"
     :disabled="disabled"
     :loading="loading"

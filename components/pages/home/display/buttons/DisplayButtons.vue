@@ -13,7 +13,7 @@ const onClick = () => {
 <template>
   <div class="mt-16">
     <h2 class="text-xl text-gray-900 dark:text-gray-100">Buttons:</h2>
-    <div class="mt-8 flex items-center flex-wrap justify-center gap-8">
+    <div class="mt-12 flex items-center flex-wrap justify-center gap-8">
       <AtomsButton class="dark:text-gray-100" :loading="loading" @click="onClick"> Click here </AtomsButton>
       <AtomsButton
         class="text-white rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-2xl bg-gradient-to-l from-orange-400 to-blue-300 hover:from-blue-300 hover:to-orange-400"
