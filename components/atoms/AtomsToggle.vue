@@ -1,32 +1,32 @@
 <script setup lang="ts">
-defineProps({
-  modelValue: {
-    type: Boolean,
-    default: true,
-  },
-  dynamicRadius: {
-    type: Boolean,
-    default: false,
-  },
-  outward: {
-    type: Boolean,
-    default: false,
-  },
-});
+withDefaults(
+  defineProps<{
+    modelValue: boolean;
+    dynamicRadius?: boolean;
+    disabled?: boolean;
+    outward?: boolean;
+  }>(),
+  {
+    modelValue: true,
+    dynamicRadius: false,
+    disabled: false,
+    outward: false,
+  }
+);
 
 defineEmits(['update:modelValue']);
 </script>
 
 <template>
   <button
-    class="px-[0.125rem] w-12 flex items-center rounded-1"
+    class="px-[0.125rem] w-12 flex items-center"
     :class="[
       `${modelValue ? 'bg-primary' : 'bg-gray-400'}`,
       {
         'rounded-1': dynamicRadius,
         'rounded-full': !dynamicRadius,
         'h-6': !outward,
-        'h-2': outward,
+        'h-4': outward,
       },
     ]"
     @click="$emit('update:modelValue', !modelValue)"

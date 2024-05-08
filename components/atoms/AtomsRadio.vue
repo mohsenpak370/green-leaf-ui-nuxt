@@ -30,12 +30,12 @@ const vModelValue = computed<string>({
       v-model="vModelValue"
       type="radio"
       :value="value"
-      class="flex-shrink-0 appearance-none border border-gray-300 hover:border-primary disabled:border-gray-200 rounded-full checked:border-primary-accent"
+      class="flex-shrink-0 appearance-none border border-gray-300 hover:border-primary rounded-full checked:border-primary-accent"
       :class="{
         'size-4 before:size-2.5': size === 'sm',
         'size-6 before:size-4': size === 'md',
         'size-8 before:size-6': size === 'lg',
-        'cursor-not-allowed': disabled,
+        'cursor-not-allowed disabled:border-gray-200 dark:disabled:border-gray-600': disabled,
         'cursor-pointer': !disabled,
       }"
       :disabled="disabled"
@@ -57,10 +57,11 @@ input[type='radio']::before {
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1.5rem 1.5rem var(--primary-color);
+  z-index: 0;
 }
 
 input[type='radio']:disabled::before {
-  box-shadow: inset 1.5rem 1.5rem #e5e7eb;
+  box-shadow: inset 1.5rem 1.5rem #bbb;
 }
 
 input[type='radio']:checked::before {

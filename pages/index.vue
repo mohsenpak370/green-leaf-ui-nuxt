@@ -24,28 +24,6 @@ const checkbox = ref(['c']);
     <PagesHomeDisplayButtons />
     <PagesHomeDisplayRadio />
     <PagesHomeDisplayCheckbox />
-    <div class="mt-12 flex items-center justify-center gap-8">
-      <AtomsCheckbox
-        v-model="checkbox"
-        value="a"
-        size="sm"
-        label="Radio Label 1"
-        label-classes="font-bold text-sm text-gray-900 dark:text-gray-100"
-      />
-      <AtomsCheckbox v-model="checkbox" value="c" disabled>
-        <div class="">
-          <p class="text-xl text-gray-900 dark:text-gray-100">testing Title</p>
-          <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
-        </div>
-      </AtomsCheckbox>
-      <AtomsCheckbox
-        v-model="checkbox"
-        value="b"
-        size="lg"
-        label="Radio Label 2"
-        label-classes="text-sm text-gray-900 dark:text-gray-100"
-      />
-    </div>
     <div class="my-4 flex items-center justify-center">
       <AtomsInput
         v-model="radio"
