@@ -54,7 +54,9 @@ const showPassword = ref(false);
 <template>
   <label>
     <slot v-if="!label" name="label" />
-    <span v-if="label" :class="['block', { labelClass: true }]">{{ label }}</span>
+    <span v-if="label" :class="['block', { [labelClass]: true }]"
+      >{{ label }} <span v-if="required" class="text-gray-400">*</span></span
+    >
     <label class="px-2 h-12 flex items-center justify-between gap-2 rounded-1 border" :class="inputClass">
       <slot name="prepend" />
       <input
@@ -66,7 +68,7 @@ const showPassword = ref(false);
         :minlength="minLength"
         :maxlength="maxLength"
         class="w-full h-full bg-transparent outline-none"
-        @input="$emit('update:modelValue', $event?.target?.value)"
+        @input="$emit('update:modelValue', ($event as any)?.target?.value)"
       />
       <span class="flex-shrink-0 flex items-center gap-1">
         <button
@@ -77,8 +79,8 @@ const showPassword = ref(false);
           <IconX class="text-2xl text-gray-500" />
         </button>
         <button v-if="type === 'password' && !disabled" @click="showPassword = !showPassword">
-          <IconEye filled v-if="!showPassword" class="text-2xl text-gray-500" />
-          <IconEyeSlash filled v-if="showPassword" class="text-2xl text-gray-500" />
+          <IconEye filled v-if="!showPassword" class="text-2xl text-gray-400" />
+          <IconEyeSlash filled v-if="showPassword" class="text-2xl text-gray-400" />
         </button>
         <slot name="append" />
       </span>
