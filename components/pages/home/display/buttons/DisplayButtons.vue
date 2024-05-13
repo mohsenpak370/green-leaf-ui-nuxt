@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const loading = ref(false);
 
+const colorMode = useColorMode();
+
 const onClick = () => {
   console.log('clicked');
   loading.value = true;
@@ -27,7 +29,7 @@ const onClick = () => {
       </AtomsButton>
       <AtomsButton class="border-2 border-current dark:text-gray-100 rounded-none" :loading="loading" @click="onClick">
         <template v-slot:loading>
-          <AtomsLoader color="white" size="sm" :type="3" />
+          <AtomsLoader :color="colorMode.value === 'light' ? 'black' : 'white'" size="sm" :type="3" />
         </template>
         Click here
       </AtomsButton>

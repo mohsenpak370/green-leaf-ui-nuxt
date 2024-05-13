@@ -19,14 +19,14 @@ defineEmits(['update:modelValue']);
 
 <template>
   <button
-    class="px-[0.125rem] w-12 flex items-center"
+    class="px-[0.125rem] flex items-center"
     :class="[
       `${modelValue ? 'bg-primary' : 'bg-gray-400'}`,
       {
         'rounded-1': dynamicRadius,
         'rounded-full': !dynamicRadius,
-        'h-6': !outward,
-        'h-4': outward,
+        'h-6 w-12': !outward,
+        'h-4 w-10': outward,
       },
     ]"
     @click="$emit('update:modelValue', !modelValue)"
@@ -36,7 +36,7 @@ defineEmits(['update:modelValue']);
       :class="{
         'ring-2': outward,
         'translate-x-6': modelValue && !outward,
-        'translate-x-6 ring-primary': modelValue && outward,
+        'translate-x-5 ring-primary': modelValue && outward,
         '-left-1 ring-gray-400': !modelValue && outward,
         'rounded-1': dynamicRadius,
         'rounded-full': !dynamicRadius,
