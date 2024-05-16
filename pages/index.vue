@@ -17,11 +17,13 @@
         <IconGreenLeaf class="mx-auto text-[16rem]" filled />
       </div>
     </div>
+    <PagesHomeDisplayCssVariables />
     <PagesHomeDisplayButtons />
     <PagesHomeDisplayRadio />
     <PagesHomeDisplayCheckbox />
     <PagesHomeDisplayInputs />
     <PagesHomeDisplayToggles />
     <PagesHomeDisplayLoadings />
+    <PagesHomeDisplayRangeSliders />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const toggleOn = ref(false);
+const toggleOn = ref(true);
 </script>
 
 <template>

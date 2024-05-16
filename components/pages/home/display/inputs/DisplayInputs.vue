@@ -20,7 +20,7 @@ const input = ref('');
       <AtomsInput
         v-model="input"
         input-class="dark:text-gray-100 dark:border-gray-700 focus-within:border-primary"
-        placeholder="Input Placeholder"
+        placeholder="********"
         type="password"
       />
       <AtomsInput v-model="input" input-class="text-gray-400 dark:border-gray-700 user-select-none" disabled>
@@ -38,7 +38,11 @@ const input = ref('');
         required
         label-class="dark:text-gray-100"
       />
-      <AtomsInput v-model="input" input-class="mt-2 border-green-500 dark:text-gray-200" disabled>
+      <AtomsInput
+        v-model="input"
+        placeholder="Input Placeholder"
+        input-class="mt-2 border-green-500 dark:text-gray-200 focus-within:ring-2"
+      >
         <template #label>
           <div class="flex items-center justify-between">
             <p class="text-gray-900 dark:text-gray-100">Custom Input Label</p>

@@ -33,7 +33,7 @@ const vModelValue = computed({
     <input v-model="vModelValue" :value="value" class="inp-cbx" type="checkbox" :disabled="disabled" />
     <span class="cbx">
       <span
-        class="border border-gray-300 group-hover:border-primary disabled:border-gray-200 disabled:bg-gray-100 checked:border-primary-accent"
+        class="border border-gray-300 group-hover:border-primary disabled:border-gray-200 checked:border-primary-accent"
         :class="{
           'size-4 ': size === 'sm',
           'size-6 ': size === 'md',
@@ -107,10 +107,11 @@ const vModelValue = computed({
   animation: wave-4 0.4s ease;
 }
 .checkbox-wrapper-4 .inp-cbx:disabled + .cbx span:first-child {
-  background: #e5e7eb;
-  border-color: #e5e7eb;
+  background: #bbb;
+  border-color: #bbb;
   animation: wave-4 0.4s ease;
 }
+
 .checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child svg {
   stroke-dashoffset: 0;
 }

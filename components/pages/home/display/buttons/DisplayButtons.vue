@@ -42,6 +42,26 @@ const onClick = () => {
       <ButtonPrimary filled :loading="loading" @click="onClick"> Click here </ButtonPrimary>
       <ButtonPrimary :loading="loading" @click="onClick"> Click here </ButtonPrimary>
       <ButtonPrimary disabled @click="onClick"> Click here </ButtonPrimary>
+      <AtomsButton
+        class="w-12 px-0 bg-green-600 hover:bg-green-700 text-white border-none"
+        :loading="loading"
+        @click="onClick"
+      >
+        <IconEye filled class="text-2xl" />
+        <template v-slot:loading>
+          <AtomsLoader class="w-4" color="white" size="lg" :type="5" />
+        </template>
+      </AtomsButton>
+      <AtomsButton
+        class="w-12 px-0 bg-primary hover:bg-primary-accent text-white border-none"
+        :loading="loading"
+        @click="onClick"
+      >
+        <IconEye filled class="w-8 text-2xl" />
+        <template v-slot:loading>
+          <AtomsLoader class="w-4" color="white" size="lg" :type="4" />
+        </template>
+      </AtomsButton>
     </div>
   </div>
 </template>
