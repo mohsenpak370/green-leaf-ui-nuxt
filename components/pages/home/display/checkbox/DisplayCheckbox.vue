@@ -17,7 +17,7 @@ const checkbox = ref(['c']);
         v-model="checkbox"
         value="b"
         label="Checkbox - medium"
-        label-classes="font-bold text-sm text-gray-900 dark:text-gray-100"
+        label-classes="font-bold text-gray-900 dark:text-gray-100"
       />
       <AtomsCheckbox
         v-model="checkbox"
@@ -34,7 +34,7 @@ const checkbox = ref(['c']);
         label="Checkbox - disabled"
         label-classes="text-sm text-gray-900 dark:text-gray-100"
       />
-      <AtomsCheckbox v-model="checkbox" size="lg" value="d">
+      <AtomsCheckbox v-model="checkbox" size="lg" value="d" class="!items-start">
         <div class="">
           <p class="text-xl text-gray-900 dark:text-gray-100">Custom label slot</p>
           <p class="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>

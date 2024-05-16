@@ -18,14 +18,14 @@ const radio = ref('c');
         value="b"
         size="md"
         label="Radio input - medium"
-        label-classes="text-sm text-gray-900 dark:text-gray-100"
+        label-classes="text-gray-900 dark:text-gray-100"
       />
       <AtomsRadio
         v-model="radio"
         value="c"
         size="lg"
         label="Radio input - large"
-        label-classes="text-sm text-gray-900 dark:text-gray-100"
+        label-classes="text-lg text-gray-900 dark:text-gray-100"
       />
       <AtomsRadio
         v-model="radio"
@@ -33,9 +33,9 @@ const radio = ref('c');
         size="lg"
         disabled
         label="Radio input - disabled"
-        label-classes="text-sm text-gray-900 dark:text-gray-100"
+        label-classes="text-lg text-gray-900 dark:text-gray-100"
       />
-      <AtomsRadio v-model="radio" value="d" size="lg">
+      <AtomsRadio v-model="radio" value="d" size="lg" class="!items-start">
         <div>
           <p class="text-xl text-gray-900 dark:text-gray-100">Custom label slot</p>
           <p class="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
