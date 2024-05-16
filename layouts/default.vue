@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light-default dark:bg-dark-default pb-4">
-    <OrganismsHeader />
+    <OHeader />
     <slot />
   </div>
 </template>

@@ -32,7 +32,7 @@ defineEmits(['update:modelValue']);
     @click="$emit('update:modelValue', !modelValue)"
   >
     <span
-      class="relative w-5 h-5 rounded-1 transform duration-300 bg-white"
+      class="relative w-5 h-5 rounded-1 transform duration-300 bg-white shadow"
       :class="{
         'ring-2': outward,
         'translate-x-6': modelValue && !outward,
