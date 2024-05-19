@@ -6,8 +6,8 @@ const input = ref('');
   <div class="mt-16">
     <h2 class="text-xl text-gray-900 dark:text-gray-100">Inputs:</h2>
     <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-      <AtomsInput v-model="input" input-class="dark:text-gray-100 dark:border-gray-700" />
-      <AtomsInput
+      <AInput v-model="input" input-class="dark:text-gray-100 dark:border-gray-700" />
+      <AInput
         v-model="input"
         type="email"
         input-class="dark:text-gray-100 dark:border-gray-700 focus-within:border-primary"
@@ -16,29 +16,29 @@ const input = ref('');
         <template #prepend>
           <IconMail class="relative text-[1.8rem] text-gray-400" filled />
         </template>
-      </AtomsInput>
-      <AtomsInput
+      </AInput>
+      <AInput
         v-model="input"
         input-class="dark:text-gray-100 dark:border-gray-700 focus-within:border-primary"
         placeholder="********"
         type="password"
       />
-      <AtomsInput v-model="input" input-class="text-gray-400 dark:border-gray-700 user-select-none" disabled>
+      <AInput v-model="input" input-class="text-gray-400 dark:border-gray-700 user-select-none" disabled>
         <template #prepend>
           <IconMoon class="text-3xl text-gray-300 dark:text-gray-600" />
         </template>
         <template #append>
           <IconSun class="text-3xl text-gray-300 dark:text-gray-600" />
         </template>
-      </AtomsInput>
-      <AtomsInput
+      </AInput>
+      <AInput
         v-model="input"
         input-class="mt-2 focus-within:border-primary dark:text-gray-200"
         label="Input Label"
         required
         label-class="dark:text-gray-100"
       />
-      <AtomsInput
+      <AInput
         v-model="input"
         placeholder="Input Placeholder"
         input-class="mt-2 border-green-500 dark:text-gray-200 focus-within:ring-2"
@@ -52,7 +52,7 @@ const input = ref('');
         <template #support>
           <div class="mt-1 text-sm text-gray-700 dark:text-gray-300">Input support text</div>
         </template>
-      </AtomsInput>
+      </AInput>
     </div>
   </div>
 </template>

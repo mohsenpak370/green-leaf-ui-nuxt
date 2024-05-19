@@ -2,7 +2,7 @@
 // NOTE: to choose from more animations, check this url: https://css-loaders.com/
 const props = withDefaults(
   defineProps<{
-    type?: number;
+    type?: number | string;
     color?: string;
     size?: 'sm' | 'md' | 'lg';
   }>(),
@@ -25,11 +25,11 @@ const props = withDefaults(
   >
     <div
       :class="{
-        'loader--1': props.type === 1,
-        'loader--2': props.type === 2,
-        'loader--3': props.type === 3,
-        'loader--4': props.type === 4,
-        'loader--5': props.type === 5,
+        'loader--1': props.type == 1,
+        'loader--2': props.type == 2,
+        'loader--3': props.type == 3,
+        'loader--4': props.type == 4,
+        'loader--5': props.type == 5,
       }"
     />
   </div>

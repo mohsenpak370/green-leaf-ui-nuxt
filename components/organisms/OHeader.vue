@@ -33,7 +33,7 @@ onClickOutside(config, (event) => (showConfig.value = false));
 
 <template>
   <div
-    class="container py-3 md:py-6 flex items-center justify-between bg-light-default dark:bg-dark-default sticky top-0 z-10"
+    class="container py-3 md:py-6 flex items-center justify-between bg-light-default dark:bg-dark-default sticky top-0 z-20"
   >
     <div class="flex items-center gap-2">
       <h1 class="relative -top-0.5 text-2xl md:text-4xl font-semibold text-gray-700 dark:text-gray-50">

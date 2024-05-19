@@ -15,11 +15,11 @@ const onClick = () => {
 </script>
 
 <template>
-  <AtomsButton
-    class="px-4 py-2 rounded-1 border border-primary hover:border-primary-accent text-primary hover:text-primary-accent"
+  <AButton
+    class="px-4 py-2 rounded-1 border border-secondary hover:border-secondary-accent text-secondary hover:text-secondary-accent"
     :class="{
-      'bg-primary hover:bg-primary-accent !text-white': filled && !disabled,
-      'dark:bg-white/80': !filled && !disabled,
+      'bg-secondary hover:bg-secondary-accent !text-white': filled && !disabled,
+      'dark:bg-white/90': !filled && !disabled,
       '!bg-gray-300 !text-gray-500 !border-gray-200': disabled,
     }"
     :disabled="disabled"
@@ -29,8 +29,8 @@ const onClick = () => {
     @click="onClick"
   >
     <template v-slot:loading>
-      <AtomsLoader :color="filled ? 'white' : 'var(--primary-color)'" size="sm" :type="2" />
+      <ALoader :color="filled ? 'white' : 'var(--secondary-color)'" size="sm" :type="2" />
     </template>
     <slot> Button </slot>
-  </AtomsButton>
+  </AButton>
 </template>

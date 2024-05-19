@@ -54,7 +54,7 @@ const showPassword = ref(false);
 <template>
   <label>
     <slot v-if="!label" name="label" />
-    <span v-if="label" :class="['block', { [labelClass]: true }]"
+    <span v-if="label" :class="['block', labelClass]"
       >{{ label }} <span v-if="required" class="text-gray-400">*</span></span
     >
     <label class="px-2 h-12 flex items-center justify-between gap-2 rounded-1 border" :class="inputClass">

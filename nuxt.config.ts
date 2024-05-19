@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['@/assets/css/variables.css'],
+  components: [
+    { path: '~/components/atoms', pathPrefix: false },
+    { path: '~/components/molecules', pathPrefix: false },
+    { path: '~/components/organisms', pathPrefix: false },
+    '~/components',
+  ],
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',

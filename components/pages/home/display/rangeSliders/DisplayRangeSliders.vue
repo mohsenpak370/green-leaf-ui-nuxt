@@ -8,8 +8,8 @@ const maxValue = ref(90);
   <div class="mt-16">
     <h2 class="text-xl text-gray-900 dark:text-gray-100">Range Sliders:</h2>
     <div class="mt-12 grid lg:grid-cols-2 items-center flex-wrap gap-16">
-      <AtomsRangeSlider v-model="value" class="dark:text-gray-200" />
-      <AtomsRangeSlider
+      <ARangeSlider v-model="value" class="dark:text-gray-200" />
+      <ARangeSlider
         v-model="value"
         class="dark:text-gray-200"
         hide-values
@@ -18,22 +18,22 @@ const maxValue = ref(90);
         thickness="4"
         dynamic-radius
       />
-      <AtomsRangeSlider
+      <ARangeSlider
         v-model="value"
         class="dark:text-gray-200"
         thickness="5"
         handle-size="1"
         value-balloon-class="absolute top-8 p-1 text-xs rounded-full border bg-light-accent dark:bg-dark-accent shadow"
       />
-      <AtomsRangeSlider v-model="value" class="dark:text-gray-200" handle-size="5" thickness="1" hide-min-max />
-      <AtomsDualRangeSlider
+      <ARangeSlider v-model="value" class="dark:text-gray-200" handle-size="5" thickness="1" hide-min-max />
+      <ADualRangeSlider
         v-model:min-value="minValue"
         v-model:max-value="maxValue"
         hide-values
         hide-min-max
         class="dark:text-gray-200"
       />
-      <AtomsDualRangeSlider
+      <ADualRangeSlider
         v-model:min-value="minValue"
         v-model:max-value="maxValue"
         class="dark:text-gray-200"
@@ -41,7 +41,7 @@ const maxValue = ref(90);
         dynamic-radius
         step="10"
       />
-      <AtomsDualRangeSlider
+      <ADualRangeSlider
         v-model:min-value="minValue"
         v-model:max-value="maxValue"
         thickness="4"
@@ -50,7 +50,7 @@ const maxValue = ref(90);
         min-max-class="text-sm font-semibold "
         class="dark:text-gray-200"
       />
-      <AtomsDualRangeSlider
+      <ADualRangeSlider
         v-model:min-value="minValue"
         v-model:max-value="maxValue"
         thickness="1"

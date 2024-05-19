@@ -2,6 +2,11 @@
 export default {
   darkMode: ['selector', '.dark-mode'],
   content: [],
+  safelist: [
+    {
+      pattern: /bg-(red|green|blue|yellow|orange|purple|pink|gray|brown)-400/,
+    },
+  ],
   theme: {
     container: {
       center: true,
