@@ -19,6 +19,7 @@
     </div>
     <PagesHomeDisplayCssVariables />
     <PagesHomeDisplayButtons />
+    <PagesHomeDisplaySelect />
     <PagesHomeDisplayRadio />
     <PagesHomeDisplayCheckbox />
     <PagesHomeDisplayInputs />

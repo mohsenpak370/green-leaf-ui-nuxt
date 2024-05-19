@@ -15,7 +15,9 @@ const onClick = () => {
 <template>
   <div class="mt-16">
     <h2 class="text-xl text-gray-900 dark:text-gray-100">Buttons:</h2>
-    <div class="mt-12 flex items-center flex-wrap justify-center gap-8">
+    <div
+      class="mt-12 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 items-center justify-center gap-8"
+    >
       <AButton class="dark:text-gray-100" :loading="loading" @click="onClick"> Click here </AButton>
       <AButton
         class="text-white rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-2xl bg-gradient-to-l from-orange-400 to-blue-300 hover:from-blue-300 hover:to-orange-400"
@@ -41,9 +43,11 @@ const onClick = () => {
       </AButton>
       <MButtonPrimary filled :loading="loading" @click="onClick"> Click here </MButtonPrimary>
       <MButtonPrimary :loading="loading" @click="onClick"> Click here </MButtonPrimary>
-      <MButtonPrimary disabled @click="onClick"> Click here </MButtonPrimary>
+      <MButtonSecondary filled :loading="loading" @click="onClick"> Click here </MButtonSecondary>
+      <MButtonSecondary :loading="loading" @click="onClick"> Click here </MButtonSecondary>
+      <MButtonSecondary disabled @click="onClick"> Click here </MButtonSecondary>
       <AButton
-        class="w-12 !px-0 bg-green-600 hover:bg-green-700 text-white border-none"
+        class="w-12 mx-auto !px-0 bg-green-600 hover:bg-green-700 text-white border-none"
         :loading="loading"
         @click="onClick"
       >
@@ -53,7 +57,7 @@ const onClick = () => {
         </template>
       </AButton>
       <AButton
-        class="w-12 !px-0 bg-primary hover:bg-primary-accent text-white border-none"
+        class="w-12 mx-auto !px-0 bg-primary hover:bg-primary-accent text-white border-none"
         :loading="loading"
         @click="onClick"
       >
