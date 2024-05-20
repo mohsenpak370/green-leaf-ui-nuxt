@@ -27,7 +27,7 @@ const vModelValue = computed({
 
 <template>
   <label
-    class="checkbox-wrapper-4 inline-flex items-center gap-2 select-none group"
+    class="checkbox-wrapper inline-flex items-center gap-2 select-none group"
     :class="disabled ? 'cursor-not-allowed' : 'cursor-pointer'"
   >
     <input v-model="vModelValue" :value="value" class="inp-cbx" type="checkbox" :disabled="disabled" />
@@ -64,24 +64,24 @@ const vModelValue = computed({
 </template>
 
 <style scoped>
-.checkbox-wrapper-4 .cbx {
+.checkbox-wrapper .cbx {
   transition: all 0.2s ease;
   display: inline-block;
 }
 
-.checkbox-wrapper-4 .cbx span {
+.checkbox-wrapper .cbx span {
   float: left;
   vertical-align: middle;
   transform: translate3d(0, 0, 0);
 }
-.checkbox-wrapper-4 .cbx span:first-child {
+.checkbox-wrapper .cbx span:first-child {
   position: relative;
   border-radius: 0.25rem;
   transform: scale(1);
   transition: all 0.2s ease;
   box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
 }
-.checkbox-wrapper-4 .cbx span:first-child svg {
+.checkbox-wrapper .cbx span:first-child svg {
   position: absolute;
   top: 0.1875rem;
   left: 0.14rem;
@@ -97,25 +97,25 @@ const vModelValue = computed({
   transform: translate3d(0, 0, 0);
 }
 
-.checkbox-wrapper-4 .inp-cbx {
+.checkbox-wrapper .inp-cbx {
   position: absolute;
   visibility: hidden;
 }
-.checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child {
+.checkbox-wrapper .inp-cbx:checked + .cbx span:first-child {
   background: var(--primary-color);
   border-color: var(--primary-color);
   animation: wave-4 0.4s ease;
 }
-.checkbox-wrapper-4 .inp-cbx:disabled + .cbx span:first-child {
+.checkbox-wrapper .inp-cbx:disabled + .cbx span:first-child {
   background: #bbb;
   border-color: #bbb;
   animation: wave-4 0.4s ease;
 }
 
-.checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child svg {
+.checkbox-wrapper .inp-cbx:checked + .cbx span:first-child svg {
   stroke-dashoffset: 0;
 }
-.checkbox-wrapper-4 .inline-svg {
+.checkbox-wrapper .inline-svg {
   position: absolute;
   width: 0;
   height: 0;
@@ -123,8 +123,7 @@ const vModelValue = computed({
   user-select: none;
 }
 @media screen and (max-width: 640px) {
-  .checkbox-wrapper-4 .cbx {
-    width: 100%;
+  .checkbox-wrapper .cbx {
     display: inline-block;
   }
 }
