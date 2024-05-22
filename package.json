@@ -1,10 +1,13 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "green-leaf-ui",
+  "version": "0.1.0",
+  "private": false,
   "type": "module",
+  "main": "./nuxt.config.ts",
   "scripts": {
     "postinstall": "nuxt prepare",
-    "prepare": "husky install",
+    "dev:prepare": "husky install",
+    "prepare": "cd ../ && husky install",
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
@@ -24,12 +27,12 @@
     "ajv": "^8.12.0",
     "install": "^0.13.0",
     "lint-staged": "^15.2.2",
-    "nuxt": "^3.11.2",
     "nuxt-svgo": "^4.0.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "nuxt": "^3.11.2",
     "@eslint/js": "^9.0.0",
     "@nuxt/eslint-config": "^0.3.6",
     "@nuxtjs/eslint-module": "^4.1.0",
