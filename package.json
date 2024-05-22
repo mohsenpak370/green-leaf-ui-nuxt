@@ -5,7 +5,6 @@
   "type": "module",
   "main": "./nuxt.config.ts",
   "scripts": {
-    "postinstall": "nuxt prepare",
     "dev:prepare": "husky install",
     "prepare": "cd ../ && husky install",
     "dev": "nuxt dev",
