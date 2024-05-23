@@ -9,10 +9,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [join(currentDir, './assets/css/variables.css')],
   components: [
-    { path: '~/components/atoms', pathPrefix: false },
-    { path: '~/components/molecules', pathPrefix: false },
-    { path: '~/components/organisms', pathPrefix: false },
-    '~/components',
+    { path: join(currentDir, './components/atoms'), pathPrefix: false },
+    { path: join(currentDir, './components/molecules'), pathPrefix: false },
+    { path: join(currentDir, './components/organisms'), pathPrefix: false },
+    join(currentDir, './components'),
   ],
   modules: [
     '@nuxtjs/tailwindcss',
