@@ -1,12 +1,15 @@
 {
   "name": "green-leaf-ui",
-  "description": "UI component library for Nuxt",
+  "description": "UI component library for nuxt",
   "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "./nuxt.config.ts",
   "license": "MIT",
   "scripts": {
+    "postinstall": "nuxt prepare",
+    "dev:prepare": "husky install",
+    "prepare": "cd ../../../ && husky install",
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
@@ -21,25 +24,25 @@
     "@nuxtjs/color-mode": "^3.4.0",
     "@nuxtjs/i18n": "^8.3.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
+    "@vercel/analytics": "^1.2.2",
     "@vueuse/nuxt": "^10.9.0",
     "ajv": "^8.12.0",
     "install": "^0.13.0",
     "lint-staged": "^15.2.2",
     "nuxt-svgo": "^4.0.0",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "@nuxtjs/eslint-module": "^4.1.0",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "nuxt": "^3.11.2",
     "@eslint/js": "^9.0.0",
     "@nuxt/eslint-config": "^0.3.6",
+    "@nuxtjs/eslint-module": "^4.1.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "husky": "^8.0.0",
-    "prettier": "^3.2.5"
-  },
-  "devDependencies": {
-    "@vercel/analytics": "^1.2.2",
-    "nuxt": "^3.11.2",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.5",
     "vue-tsc": "^1"
   }
