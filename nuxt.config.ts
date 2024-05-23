@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
-    join(currentDir, './node_modules/@nuxtjs/eslint-module/dist/module.mjs'),
+    '@nuxtjs/eslint-module',
     'nuxt-svgo',
     '@nuxtjs/color-mode',
     '@vueuse/nuxt',
@@ -46,6 +46,7 @@ export default defineNuxtConfig({
     lintOnStart: false,
   },
   svgo: {
+    autoImportPath: join(currentDir, './assets/icons'),
     componentPrefix: 'icon',
     fontControl: false,
   },
