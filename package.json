@@ -1,9 +1,11 @@
 {
   "name": "green-leaf-ui",
+  "description": "UI component library for Nuxt",
   "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "./nuxt.config.ts",
+  "license": "MIT",
   "scripts": {
     "dev:prepare": "husky install",
     "dev": "nuxt dev",
