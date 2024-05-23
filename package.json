@@ -7,7 +7,6 @@
   "main": "./nuxt.config.ts",
   "license": "MIT",
   "scripts": {
-    "dev:prepare": "husky install",
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
