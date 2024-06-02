@@ -144,7 +144,7 @@ const trackThickness = computed(() => {
 }
 
 .dual-range-slider input[type='range'] {
-  @apply appearance-none w-full bg-gray-200 dark:bg-gray-700;
+  @apply appearance-none w-full bg-gray-200 dark:bg-gray-200;
   background-image: linear-gradient(v-bind(sliderBackground));
   border-radius: v-bind(handleRadius);
 }

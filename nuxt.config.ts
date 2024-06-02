@@ -1,7 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['@/assets/css/variables.css'],
+  css: [
+    '@/assets/css/variables.css',
+    '@/assets/css/telma.css',
+    '@/assets/css/boska.css',
+    '@/assets/css/kalam.css',
+    '@/assets/css/chillax.css',
+  ],
   components: [
     { path: '~/components/atoms', pathPrefix: false },
     { path: '~/components/molecules', pathPrefix: false },
@@ -16,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vueuse/nuxt',
     '@formkit/auto-animate/nuxt',
+    '@nuxt/image',
   ],
   i18n: {
     vueI18n: './i18n.config.ts',
